@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!-- saved from url=(0184)https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/design-showcase.html?_t=1761375640929&canvas_history_id=142ef29a-299d-40f7-a903-ab7fff9982d3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquería Doña Alicia - Design Mockups</title>
+    <link href="./css2" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #a8b2d1;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-note {
+            font-size: 1.1rem;
+            color: #64ffda;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .design-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .design-preview {
+            position: relative;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-label {
+            font-size: 1.1rem;
+            color: #a8b2d1;
+            font-weight: 600;
+        }
+
+        .design-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-heritage {
+            background: linear-gradient(135deg, #D84315, #F57C00);
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #FF3D00, #FFB300);
+        }
+
+        .badge-energetic {
+            background: linear-gradient(135deg, #FF1744, #00E676);
+        }
+
+        .design-content {
+            padding: 2rem;
+        }
+
+        .design-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .design-tagline {
+            color: #a8b2d1;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .design-description {
+            color: #ccd6f6;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .design-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .design-features h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #a8b2d1;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #ccd6f6;
+        }
+
+        .design-actions {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-tertiary {
+            background: transparent;
+            color: #64ffda;
+            border: 2px solid #64ffda;
+        }
+
+        .btn-tertiary:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .recommendation {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .recommendation h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .rec-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid;
+        }
+
+        .rec-card.heritage {
+            border-color: #F57C00;
+        }
+
+        .rec-card.premium {
+            border-color: #FFB300;
+        }
+
+        .rec-card.energetic {
+            border-color: #00E676;
+        }
+
+        .rec-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rec-card p {
+            color: #ccd6f6;
+            line-height: 1.8;
+        }
+
+        .rec-label {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a8b2d1;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .designs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recommendation {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Design Mockup Options</h1>
+            <p class="subtitle">Three fully functional prototypes for Taquería Doña Alicia</p>
+            <p class="header-note">👆 Click any design below to explore the full interactive experience</p>
+        </header>
+
+        <div class="designs-grid">
+            <!-- Cultural Fire Design -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <div class="design-badge badge-heritage">Heritage &amp; Trust</div>
+                    <div class="preview-icon">🏠</div>
+                    <div class="preview-label">Click to explore full site →</div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Cultural Fire</h3>
+                    <p class="design-tagline">Warm • Traditional • Family-Focused</p>
+                    <p class="design-description">
+                        Emphasizes authenticity and heritage with warm colors, traditional design patterns, and family storytelling. Perfect for building trust and emotional connection with customers.
+                    </p>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🎨 Warm color palette</span>
+                            <span class="feature-tag">👨‍👩‍👧‍👦 Family story focus</span>
+                            <span class="feature-tag">⭐ Social proof heavy</span>
+                            <span class="feature-tag">🏠 Welcoming vibe</span>
+                        </div>
+                    </div>
+                    <div class="design-actions">
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/cultural-fire/index.html" target="_blank" class="btn btn-primary">🚀 Open Full Website</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/cultural-fire/menu.html" target="_blank" class="btn btn-secondary">📋 View Menu Page</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/cultural-fire/checkout.html" target="_blank" class="btn btn-tertiary">🛒 See Checkout Flow</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark Cinematic Design -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <div class="design-badge badge-premium">Premium Experience</div>
+                    <div class="preview-icon">🌃</div>
+                    <div class="preview-label">Click to explore full site →</div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Dark Cinematic</h3>
+                    <p class="design-tagline">Bold • Dramatic • High-End</p>
+                    <p class="design-description">
+                        Creates a premium restaurant experience with bold dark colors, dramatic imagery, and sophisticated typography. Positions the brand as upscale and experience-focused.
+                    </p>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🌃 Dark premium aesthetic</span>
+                            <span class="feature-tag">🎬 Cinematic presentation</span>
+                            <span class="feature-tag">✨ Luxury feel</span>
+                            <span class="feature-tag">🎭 Dramatic impact</span>
+                        </div>
+                    </div>
+                    <div class="design-actions">
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/dark-cinematic/index.html" target="_blank" class="btn btn-primary">🚀 Open Full Website</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/dark-cinematic/menu.html" target="_blank" class="btn btn-secondary">📋 View Menu Page</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/dark-cinematic/checkout.html" target="_blank" class="btn btn-tertiary">🛒 See Checkout Flow</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Street Art Wild Design -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <div class="design-badge badge-energetic">Bold &amp; Energetic</div>
+                    <div class="preview-icon">🔥</div>
+                    <div class="preview-label">Click to explore full site →</div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Street Art Wild</h3>
+                    <p class="design-tagline">Vibrant • Youthful • Unapologetic</p>
+                    <p class="design-description">
+                        High-energy street food culture vibes with vibrant colors, playful emojis, and bold typography. Appeals to younger audiences and creates memorable, shareable moments.
+                    </p>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🔥 High energy design</span>
+                            <span class="feature-tag">🎨 Vibrant colors</span>
+                            <span class="feature-tag">😎 Street food culture</span>
+                            <span class="feature-tag">📱 Social media ready</span>
+                        </div>
+                    </div>
+                    <div class="design-actions">
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/street-art-wild/index.html" target="_blank" class="btn btn-primary">🚀 Open Full Website</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/street-art-wild/menu.html" target="_blank" class="btn btn-secondary">📋 View Menu Page</a>
+                        <a href="https://www.genspark.ai/api/code_sandbox_light/preview/80b16d0a-5e06-4479-844d-13323744f0ce/street-art-wild/checkout.html" target="_blank" class="btn btn-tertiary">🛒 See Checkout Flow</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="recommendation">
+            <h2>💡 Our Recommendations</h2>
+            <div class="rec-grid">
+                <div class="rec-card heritage">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Cultural Fire</h3>
+                    <p><strong>Best for:</strong> Building trust and emotional connection. Ideal if you want to emphasize family heritage, traditional values, and community relationships. Appeals to families and customers seeking authentic, comforting experiences.</p>
+                </div>
+
+                <div class="rec-card premium">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Dark Cinematic</h3>
+                    <p><strong>Best for:</strong> Premium positioning and brand elevation. Perfect if you want to attract foodies, create an upscale perception, and compete with higher-end restaurants. Appeals to experience-seekers and food enthusiasts.</p>
+                </div>
+
+                <div class="rec-card energetic">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Street Art Wild</h3>
+                    <p><strong>Best for:</strong> Younger demographics and social media presence. Ideal if you want to create buzz, appeal to millennials/Gen Z, and build a fun, approachable brand. Great for viral marketing and online ordering focus.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created with ❤️ for Taquería Doña Alicia • January 2025</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Each design is fully functional with working navigation, menu pages, cart, and checkout flows</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #64ffda;">💡 Open each design in a new tab to experience the full interactive prototype</p>
+        </footer>
+    </div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div id="genspark-memory-indicator" style="position: fixed; bottom: 10px; right: 10px; background: rgb(244, 67, 54); color: white; padding: 8px 12px; border-radius: 20px; font-size: 12px; z-index: 999999; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;" title="Server not reachable">🧠 Memory Active</div></body></html>
