@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquería Doña Alicia - Design Options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        .design-preview {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .design-card:hover .design-preview {
+            transform: scale(1.05);
+        }
+
+        .design-info {
+            padding: 2rem;
+        }
+
+        .design-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge-traditional {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .badge-sophisticated {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .badge-wild {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .design-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .design-info h3 {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .design-info p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .pros-cons {
+            margin: 1.5rem 0;
+        }
+
+        .pros-cons h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pros-cons li {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .pros-cons li::before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .target-audience {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .target-audience strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .target-audience span {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .view-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .recommendation {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .recommendation h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .designs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌮 Taquería Doña Alicia</h1>
+            <p>Website Design Options - Pick Your Direction</p>
+        </div>
+
+        <div class="recommendation">
+            <h3>💡 Design Strategy Notes</h3>
+            <p>
+                <strong>Context:</strong> Jacob & Alicia's restaurant is located inside a convenience store in St. Paul. 
+                They've been open about a year, serving pickup and delivery only. The food is authentic, the story is real (love, 15 kids, living the dream), and early Google reviews are strong.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>The Goal:</strong> The homepage needs to be their "storefront" - since they have no dine-in, the website must hook visitors immediately and make them want to order.
+            </p>
+        </div>
+
+        <div class="designs-grid">
+            <!-- Version 1.5: Cultural Fire -->
+            <div class="design-card">
+                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/9ae61d12-6f06-457a-97f2-56eb51ab0e2a.jpeg" 
+                     alt="Cultural Fire Design" 
+                     class="design-preview"
+                     onclick="window.open(this.src, '_blank')">
+                <div class="design-info">
+                    <span class="design-badge badge-traditional">Traditional & Vibrant</span>
+                    <h2>Version 1: Cultural Fire</h2>
+                    <h3>"Authentic Mexican Energy"</h3>
+                    
+                    <p>
+                        This design celebrates traditional Mexican aesthetics with vibrant colors, papel picado patterns, 
+                        Talavera tiles, and warm cultural elements. The hero features a dynamic split layout with massive 
+                        food photography meeting hand-painted mural vibes.
+                    </p>
+
+                    <div class="target-audience">
+                        <strong>🎯 Best For:</strong>
+                        <span>Families, traditional customers, locals who appreciate authentic Mexican culture</span>
+                    </div>
+
+                    <div class="pros-cons">
+                        <h4>✓ Strengths:</h4>
+                        <ul>
+                            <li>Immediately communicates authenticity</li>
+                            <li>Warm, welcoming, family-friendly vibe</li>
+                            <li>Honors Mexican heritage and tradition</li>
+                            <li>Broad demographic appeal</li>
+                            <li>Makes the "hidden gem" story compelling</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/9ae61d12-6f06-457a-97f2-56eb51ab0e2a.jpeg" 
+                       target="_blank" 
+                       class="view-btn">View Full Size →</a>
+                </div>
+            </div>
+
+            <!-- Version 2: Dark Cinematic -->
+            <div class="design-card">
+                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/ba6296f9-9f9d-4c4c-81ab-b850b7ceb2a4.jpeg" 
+                     alt="Dark Cinematic Design" 
+                     class="design-preview"
+                     onclick="window.open(this.src, '_blank')">
+                <div class="design-info">
+                    <span class="design-badge badge-sophisticated">Upscale & Modern</span>
+                    <h2>Version 2: Dark Cinematic</h2>
+                    <h3>"Netflix Chef's Table Vibes"</h3>
+                    
+                    <p>
+                        A sophisticated, dark, moody design that lets the food photography be the star. Think Netflix food 
+                        documentaries meets high-end steakhouse. Elegant serif headlines, gold accents, and dramatic lighting 
+                        elevate the brand.
+                    </p>
+
+                    <div class="target-audience">
+                        <strong>🎯 Best For:</strong>
+                        <span>Foodies, upscale customers, date nights, competing with established restaurants</span>
+                    </div>
+
+                    <div class="pros-cons">
+                        <h4>✓ Strengths:</h4>
+                        <ul>
+                            <li>Elevates brand perception significantly</li>
+                            <li>Food photography takes center stage</li>
+                            <li>Positions as "serious culinary experience"</li>
+                            <li>Makes convenience store location irrelevant</li>
+                            <li>Appeals to premium customers</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/ba6296f9-9f9d-4c4c-81ab-b850b7ceb2a4.jpeg" 
+                       target="_blank" 
+                       class="view-btn">View Full Size →</a>
+                </div>
+            </div>
+
+            <!-- Version 3: Street Art Wild -->
+            <div class="design-card">
+                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/7873b2cb-6f57-4a26-a4b1-e493eb9aaeb3.jpeg" 
+                     alt="Street Art Wild Design" 
+                     class="design-preview"
+                     onclick="window.open(this.src, '_blank')">
+                <div class="design-info">
+                    <span class="design-badge badge-wild">Bold & Disruptive</span>
+                    <h2>Version 3: Street Art Wild</h2>
+                    <h3>"Supreme Meets Street Tacos"</h3>
+                    
+                    <p>
+                        An unapologetically bold design mixing graffiti art, neon accents, comic book energy, and pop culture 
+                        vibes. This isn't your typical restaurant website - it's Instagram-worthy, youth-focused, and designed 
+                        to go viral.
+                    </p>
+
+                    <div class="target-audience">
+                        <strong>🎯 Best For:</strong>
+                        <span>Gen Z, Millennials, Instagram crowd, anyone tired of boring restaurant sites</span>
+                    </div>
+
+                    <div class="pros-cons">
+                        <h4>✓ Strengths:</h4>
+                        <ul>
+                            <li>Stands out MASSIVELY from competition</li>
+                            <li>High viral/shareability potential</li>
+                            <li>Attracts younger demographic</li>
+                            <li>Memorable and unique brand identity</li>
+                            <li>Perfect for social media marketing</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/7873b2cb-6f57-4a26-a4b1-e493eb9aaeb3.jpeg" 
+                       target="_blank" 
+                       class="view-btn">View Full Size →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendation">
+            <h3>🎯 My Honest Recommendation</h3>
+            <p>
+                <strong>Version 1 (Cultural Fire)</strong> is the safest choice with broad appeal. It honors the authentic story and appeals to families.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Version 2 (Dark Cinematic)</strong> is the smart business move if you want to compete with established restaurants and elevate perception. 
+                It makes the convenience store location irrelevant because the food looks so damn good.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Version 3 (Street Art Wild)</strong> is the risky move that could pay off HUGE. It's polarizing but memorable. 
+                If you want to attract a younger crowd and go viral on social media, this is it. But it won't appeal to everyone.
+            </p>
+            <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">
+                💡 <strong>Bottom Line:</strong> I'd go with Version 2 (Dark Cinematic) because it elevates the brand, makes the food the hero, 
+                and positions Taquería Doña Alicia as a serious culinary destination - not just "a taco spot in a convenience store."
+            </p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Questions or want to see modifications?</strong></p>
+            <p>These are mockups - we can blend elements, adjust colors, or create hybrid versions based on feedback.</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">Created for Jacob & Alicia Schon - Taquería Doña Alicia</p>
+        </div>
+    </div>
+</body>
+</html>
