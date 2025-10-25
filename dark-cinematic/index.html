@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquería Doña Alicia - Premium Mexican Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌶️</span>
+                <span class="logo-text">DOÑA ALICIA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="#story">STORY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="account-btn" onclick="openAuthModal()">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="cart-btn" onclick="window.location.href='checkout.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-line"></span>
+                <span>EST. 1987</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title">AUTHENTIC<br/>MEXICAN CUISINE</h1>
+            <p class="hero-subtitle">Experience Bold Flavors. Embrace Tradition.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="window.location.href='menu.html'">
+                    EXPLORE MENU
+                </button>
+                <button class="btn btn-ghost" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
+                    OUR STORY
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Banner -->
+    <section class="featured-banner">
+        <div class="banner-content">
+            <span class="banner-label">SIGNATURE DISH</span>
+            <h2>BIRRIA TACOS WITH CONSOMMÉ</h2>
+            <p>Slow-cooked for 12 hours in our grandmother's secret blend</p>
+            <button class="btn btn-accent" onclick="window.location.href='menu.html'">ORDER NOW</button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">37+</span>
+                    <span class="stat-label">YEARS<br/>EXPERIENCE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">SATISFIED<br/>CUSTOMERS</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">AVERAGE<br/>RATING</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">FRESH<br/>INGREDIENTS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section class="dishes-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">CURATED SELECTION</span>
+                <h2>SIGNATURE DISHES</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <div class="dish-overlay"></div>
+                        <div class="dish-icon">🌮</div>
+                        <div class="dish-badge">BEST SELLER</div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>TACOS AL PASTOR</h3>
+                        <p>Marinated pork, grilled pineapple, authentic spices on handmade tortillas</p>
+                        <div class="dish-rating">
+                            ★★★★★ <span>(1,247 reviews)</span>
+                        </div>
+                        <div class="dish-footer">
+                            <span class="dish-price">$3.50</span>
+                            <button class="btn btn-small">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card featured">
+                    <div class="dish-image">
+                        <div class="dish-overlay"></div>
+                        <div class="dish-icon">🥘</div>
+                        <div class="dish-badge special">CHEF'S SPECIAL</div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>ENCHILADAS VERDES</h3>
+                        <p>Hand-rolled, bathed in homemade tomatillo salsa, topped with Mexican crema</p>
+                        <div class="dish-rating">
+                            ★★★★★ <span>(892 reviews)</span>
+                        </div>
+                        <div class="dish-footer">
+                            <span class="dish-price">$12.99</span>
+                            <button class="btn btn-small">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <div class="dish-overlay"></div>
+                        <div class="dish-icon">🧀</div>
+                        <div class="dish-badge">POPULAR</div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>QUESADILLA SUPREME</h3>
+                        <p>Oaxaca cheese, choice of premium protein, grilled to perfection</p>
+                        <div class="dish-rating">
+                            ★★★★☆ <span>(1,543 reviews)</span>
+                        </div>
+                        <div class="dish-footer">
+                            <span class="dish-price">$9.99</span>
+                            <button class="btn btn-small">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all-container">
+                <button class="btn btn-outline-light" onclick="window.location.href='menu.html'">
+                    VIEW FULL MENU
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="story-grid">
+            <div class="story-image">
+                <div class="image-overlay"></div>
+                <div class="image-content">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="story-content">
+                <span class="section-label">HERITAGE</span>
+                <h2>THREE DECADES OF<br/>AUTHENTIC FLAVORS</h2>
+                <div class="section-divider left"></div>
+                <p class="story-lead">Born in Jalisco, perfected over 37 years of passion.</p>
+                <p>Doña Alicia brought more than recipes from her hometown—she brought a legacy. Every dish we serve honors the traditional methods passed through three generations of our family.</p>
+                <p>We don't cut corners. We don't rush perfection. Each ingredient is carefully sourced, each technique meticulously executed, each plate served with the pride our grandmother instilled in us.</p>
+                <blockquote>
+                    <div class="quote-mark">"</div>
+                    <p>True Mexican cuisine is not fast food. It's slow love, patient craftsmanship, and respect for tradition.</p>
+                    <cite>— Doña Alicia</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">REVIEWS</span>
+                <h2>WHAT THEY SAY</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Simply the best Mexican food I've ever experienced. The birria tacos are transcendent—rich, complex, absolutely perfect."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JR</div>
+                        <div class="author-info">
+                            <strong>Jessica Rodriguez</strong>
+                            <span>Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card featured">
+                    <div class="testimonial-badge">FEATURED REVIEW</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"I've been coming here for 10 years. The consistency, quality, and authenticity never waver. This is the real deal."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MT</div>
+                        <div class="author-info">
+                            <strong>Michael Thompson</strong>
+                            <span>Regular Since 2015</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Every bite is an experience. You can taste the love, care, and tradition in every dish. Absolutely phenomenal."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div class="author-info">
+                            <strong>Sarah Lopez</strong>
+                            <span>Food Critic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">GET IN TOUCH</span>
+                    <h2>ORDER<br/>ONLINE TODAY</h2>
+                    <div class="section-divider left"></div>
+                    <p>Experience authentic Mexican cuisine delivered to your door or ready for pickup.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>PHONE</strong>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>EMAIL</strong>
+                                <p>hola@taqueria-alicia.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>HOURS</strong>
+                                <p>MON-SAT 10AM - 9PM<br/>SUN 11AM - 8PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <h3>READY TO ORDER?</h3>
+                    <button class="btn btn-accent btn-large" onclick="window.location.href='menu.html'">
+                        EXPLORE MENU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌶️</span>
+                        <span>DOÑA ALICIA</span>
+                    </div>
+                    <p>Authentic Mexican cuisine since 1987</p>
+                </div>
+                <div class="footer-links">
+                    <h4>LINKS</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="#story">Story</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>FOLLOW</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TAQUERÍA DOÑA ALICIA. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>SIGN IN</h2>
+            <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">SIGN IN</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#">SIGN UP</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

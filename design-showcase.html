@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taquería Doña Alicia - Design Options</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Taquería Doña Alicia - Design Mockups</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,10 +13,12 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
             min-height: 100vh;
-            padding: 2rem;
+            padding: 3rem 1.5rem;
         }
 
         .container {
@@ -24,379 +26,394 @@
             margin: 0 auto;
         }
 
-        .header {
+        header {
             text-align: center;
-            color: white;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
+        .subtitle {
+            font-size: 1.3rem;
+            color: #a8b2d1;
         }
 
         .designs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
 
         .design-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .design-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .design-preview {
+            position: relative;
+            padding-top: 60%;
+            background: #2a2a3e;
+            overflow: hidden;
+        }
+
+        .design-preview iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            height: 100%;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            width: 200%;
+            height: 200%;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: 10;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .design-card:hover .design-preview {
-            transform: scale(1.05);
-        }
-
-        .design-info {
-            padding: 2rem;
         }
 
         .design-badge {
-            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .badge-traditional {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .badge-sophisticated {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-
-        .badge-wild {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            color: white;
-        }
-
-        .design-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .design-info h3 {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .design-info p {
-            color: #444;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .pros-cons {
-            margin: 1.5rem 0;
-        }
-
-        .pros-cons h4 {
-            font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #333;
+            font-size: 0.85rem;
+            z-index: 11;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .pros-cons ul {
-            list-style: none;
-            padding-left: 0;
+        .badge-heritage {
+            background: linear-gradient(135deg, #D84315, #F57C00);
         }
 
-        .pros-cons li {
-            padding: 0.3rem 0;
-            font-size: 0.9rem;
-            color: #555;
+        .badge-premium {
+            background: linear-gradient(135deg, #FF3D00, #FFB300);
         }
 
-        .pros-cons li::before {
-            content: "✓ ";
-            color: #4CAF50;
-            font-weight: bold;
-            margin-right: 0.5rem;
+        .badge-energetic {
+            background: linear-gradient(135deg, #FF1744, #00E676);
         }
 
-        .target-audience {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-        }
-
-        .target-audience strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .target-audience span {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .view-btn {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin-top: 1.5rem;
-        }
-
-        .view-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
+        .design-content {
             padding: 2rem;
-            margin-top: 3rem;
         }
 
-        .footer p {
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-        }
-
-        .recommendation {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            color: white;
-            margin-bottom: 3rem;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .recommendation h3 {
-            font-family: 'Playfair Display', serif;
+        .design-title {
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
         }
 
-        .recommendation p {
-            line-height: 1.8;
+        .design-tagline {
+            color: #a8b2d1;
+            margin-bottom: 1.5rem;
             font-size: 1.05rem;
         }
 
+        .design-description {
+            color: #ccd6f6;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .design-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .design-features h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #a8b2d1;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #ccd6f6;
+        }
+
+        .design-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .recommendation {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .recommendation h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .rec-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid;
+        }
+
+        .rec-card.heritage {
+            border-color: #F57C00;
+        }
+
+        .rec-card.premium {
+            border-color: #FFB300;
+        }
+
+        .rec-card.energetic {
+            border-color: #00E676;
+        }
+
+        .rec-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rec-card p {
+            color: #ccd6f6;
+            line-height: 1.8;
+        }
+
+        .rec-label {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a8b2d1;
+        }
+
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
             .designs-grid {
                 grid-template-columns: 1fr;
             }
 
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            body {
-                padding: 1rem;
+            .recommendation {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🌮 Taquería Doña Alicia</h1>
-            <p>Website Design Options - Pick Your Direction</p>
-        </div>
-
-        <div class="recommendation">
-            <h3>💡 Design Strategy Notes</h3>
-            <p>
-                <strong>Context:</strong> Jacob & Alicia's restaurant is located inside a convenience store in St. Paul. 
-                They've been open about a year, serving pickup and delivery only. The food is authentic, the story is real (love, 15 kids, living the dream), and early Google reviews are strong.
-            </p>
-            <p style="margin-top: 1rem;">
-                <strong>The Goal:</strong> The homepage needs to be their "storefront" - since they have no dine-in, the website must hook visitors immediately and make them want to order.
-            </p>
-        </div>
+        <header>
+            <h1>Design Mockup Options</h1>
+            <p class="subtitle">Three distinct design directions for Taquería Doña Alicia</p>
+        </header>
 
         <div class="designs-grid">
-            <!-- Version 1.5: Cultural Fire -->
+            <!-- Cultural Fire Design -->
             <div class="design-card">
-                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/9ae61d12-6f06-457a-97f2-56eb51ab0e2a.jpeg" 
-                     alt="Cultural Fire Design" 
-                     class="design-preview"
-                     onclick="window.open(this.src, '_blank')">
-                <div class="design-info">
-                    <span class="design-badge badge-traditional">Traditional & Vibrant</span>
-                    <h2>Version 1: Cultural Fire</h2>
-                    <h3>"Authentic Mexican Energy"</h3>
-                    
-                    <p>
-                        This design celebrates traditional Mexican aesthetics with vibrant colors, papel picado patterns, 
-                        Talavera tiles, and warm cultural elements. The hero features a dynamic split layout with massive 
-                        food photography meeting hand-painted mural vibes.
+                <div class="design-preview">
+                    <div class="design-badge badge-heritage">Heritage & Trust</div>
+                    <iframe src="cultural-fire/index.html" scrolling="no"></iframe>
+                    <div class="preview-overlay" onclick="window.open('cultural-fire/index.html', '_blank')"></div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Cultural Fire</h3>
+                    <p class="design-tagline">Warm • Traditional • Family-Focused</p>
+                    <p class="design-description">
+                        Emphasizes authenticity and heritage with warm colors, traditional design patterns, and family storytelling. Perfect for building trust and emotional connection with customers.
                     </p>
-
-                    <div class="target-audience">
-                        <strong>🎯 Best For:</strong>
-                        <span>Families, traditional customers, locals who appreciate authentic Mexican culture</span>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🎨 Warm color palette</span>
+                            <span class="feature-tag">👨‍👩‍👧‍👦 Family story focus</span>
+                            <span class="feature-tag">⭐ Social proof heavy</span>
+                            <span class="feature-tag">🏠 Welcoming vibe</span>
+                        </div>
                     </div>
-
-                    <div class="pros-cons">
-                        <h4>✓ Strengths:</h4>
-                        <ul>
-                            <li>Immediately communicates authenticity</li>
-                            <li>Warm, welcoming, family-friendly vibe</li>
-                            <li>Honors Mexican heritage and tradition</li>
-                            <li>Broad demographic appeal</li>
-                            <li>Makes the "hidden gem" story compelling</li>
-                        </ul>
+                    <div class="design-actions">
+                        <a href="cultural-fire/index.html" target="_blank" class="btn btn-primary">Explore Design</a>
+                        <a href="cultural-fire/menu.html" target="_blank" class="btn btn-secondary">View Menu</a>
                     </div>
-
-                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/9ae61d12-6f06-457a-97f2-56eb51ab0e2a.jpeg" 
-                       target="_blank" 
-                       class="view-btn">View Full Size →</a>
                 </div>
             </div>
 
-            <!-- Version 2: Dark Cinematic -->
+            <!-- Dark Cinematic Design -->
             <div class="design-card">
-                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/ba6296f9-9f9d-4c4c-81ab-b850b7ceb2a4.jpeg" 
-                     alt="Dark Cinematic Design" 
-                     class="design-preview"
-                     onclick="window.open(this.src, '_blank')">
-                <div class="design-info">
-                    <span class="design-badge badge-sophisticated">Upscale & Modern</span>
-                    <h2>Version 2: Dark Cinematic</h2>
-                    <h3>"Netflix Chef's Table Vibes"</h3>
-                    
-                    <p>
-                        A sophisticated, dark, moody design that lets the food photography be the star. Think Netflix food 
-                        documentaries meets high-end steakhouse. Elegant serif headlines, gold accents, and dramatic lighting 
-                        elevate the brand.
+                <div class="design-preview">
+                    <div class="design-badge badge-premium">Premium Experience</div>
+                    <iframe src="dark-cinematic/index.html" scrolling="no"></iframe>
+                    <div class="preview-overlay" onclick="window.open('dark-cinematic/index.html', '_blank')"></div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Dark Cinematic</h3>
+                    <p class="design-tagline">Bold • Dramatic • High-End</p>
+                    <p class="design-description">
+                        Creates a premium restaurant experience with bold dark colors, dramatic imagery, and sophisticated typography. Positions the brand as upscale and experience-focused.
                     </p>
-
-                    <div class="target-audience">
-                        <strong>🎯 Best For:</strong>
-                        <span>Foodies, upscale customers, date nights, competing with established restaurants</span>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🌃 Dark premium aesthetic</span>
+                            <span class="feature-tag">🎬 Cinematic presentation</span>
+                            <span class="feature-tag">✨ Luxury feel</span>
+                            <span class="feature-tag">🎭 Dramatic impact</span>
+                        </div>
                     </div>
-
-                    <div class="pros-cons">
-                        <h4>✓ Strengths:</h4>
-                        <ul>
-                            <li>Elevates brand perception significantly</li>
-                            <li>Food photography takes center stage</li>
-                            <li>Positions as "serious culinary experience"</li>
-                            <li>Makes convenience store location irrelevant</li>
-                            <li>Appeals to premium customers</li>
-                        </ul>
+                    <div class="design-actions">
+                        <a href="dark-cinematic/index.html" target="_blank" class="btn btn-primary">Explore Design</a>
+                        <a href="dark-cinematic/menu.html" target="_blank" class="btn btn-secondary">View Menu</a>
                     </div>
-
-                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/ba6296f9-9f9d-4c4c-81ab-b850b7ceb2a4.jpeg" 
-                       target="_blank" 
-                       class="view-btn">View Full Size →</a>
                 </div>
             </div>
 
-            <!-- Version 3: Street Art Wild -->
+            <!-- Street Art Wild Design -->
             <div class="design-card">
-                <img src="https://cdn1.genspark.ai/user-upload-image/5_generated/7873b2cb-6f57-4a26-a4b1-e493eb9aaeb3.jpeg" 
-                     alt="Street Art Wild Design" 
-                     class="design-preview"
-                     onclick="window.open(this.src, '_blank')">
-                <div class="design-info">
-                    <span class="design-badge badge-wild">Bold & Disruptive</span>
-                    <h2>Version 3: Street Art Wild</h2>
-                    <h3>"Supreme Meets Street Tacos"</h3>
-                    
-                    <p>
-                        An unapologetically bold design mixing graffiti art, neon accents, comic book energy, and pop culture 
-                        vibes. This isn't your typical restaurant website - it's Instagram-worthy, youth-focused, and designed 
-                        to go viral.
+                <div class="design-preview">
+                    <div class="design-badge badge-energetic">Bold & Energetic</div>
+                    <iframe src="street-art-wild/index.html" scrolling="no"></iframe>
+                    <div class="preview-overlay" onclick="window.open('street-art-wild/index.html', '_blank')"></div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">Street Art Wild</h3>
+                    <p class="design-tagline">Vibrant • Youthful • Unapologetic</p>
+                    <p class="design-description">
+                        High-energy street food culture vibes with vibrant colors, playful emojis, and bold typography. Appeals to younger audiences and creates memorable, shareable moments.
                     </p>
-
-                    <div class="target-audience">
-                        <strong>🎯 Best For:</strong>
-                        <span>Gen Z, Millennials, Instagram crowd, anyone tired of boring restaurant sites</span>
+                    <div class="design-features">
+                        <h4>Key Features</h4>
+                        <div class="features-list">
+                            <span class="feature-tag">🔥 High energy design</span>
+                            <span class="feature-tag">🎨 Vibrant colors</span>
+                            <span class="feature-tag">😎 Street food culture</span>
+                            <span class="feature-tag">📱 Social media ready</span>
+                        </div>
                     </div>
-
-                    <div class="pros-cons">
-                        <h4>✓ Strengths:</h4>
-                        <ul>
-                            <li>Stands out MASSIVELY from competition</li>
-                            <li>High viral/shareability potential</li>
-                            <li>Attracts younger demographic</li>
-                            <li>Memorable and unique brand identity</li>
-                            <li>Perfect for social media marketing</li>
-                        </ul>
+                    <div class="design-actions">
+                        <a href="street-art-wild/index.html" target="_blank" class="btn btn-primary">Explore Design</a>
+                        <a href="street-art-wild/menu.html" target="_blank" class="btn btn-secondary">View Menu</a>
                     </div>
-
-                    <a href="https://cdn1.genspark.ai/user-upload-image/5_generated/7873b2cb-6f57-4a26-a4b1-e493eb9aaeb3.jpeg" 
-                       target="_blank" 
-                       class="view-btn">View Full Size →</a>
                 </div>
             </div>
         </div>
 
+        <!-- Recommendations -->
         <div class="recommendation">
-            <h3>🎯 My Honest Recommendation</h3>
-            <p>
-                <strong>Version 1 (Cultural Fire)</strong> is the safest choice with broad appeal. It honors the authentic story and appeals to families.
-            </p>
-            <p style="margin-top: 1rem;">
-                <strong>Version 2 (Dark Cinematic)</strong> is the smart business move if you want to compete with established restaurants and elevate perception. 
-                It makes the convenience store location irrelevant because the food looks so damn good.
-            </p>
-            <p style="margin-top: 1rem;">
-                <strong>Version 3 (Street Art Wild)</strong> is the risky move that could pay off HUGE. It's polarizing but memorable. 
-                If you want to attract a younger crowd and go viral on social media, this is it. But it won't appeal to everyone.
-            </p>
-            <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">
-                💡 <strong>Bottom Line:</strong> I'd go with Version 2 (Dark Cinematic) because it elevates the brand, makes the food the hero, 
-                and positions Taquería Doña Alicia as a serious culinary destination - not just "a taco spot in a convenience store."
-            </p>
+            <h2>💡 Our Recommendations</h2>
+            <div class="rec-grid">
+                <div class="rec-card heritage">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Cultural Fire</h3>
+                    <p><strong>Best for:</strong> Building trust and emotional connection. Ideal if you want to emphasize family heritage, traditional values, and community relationships. Appeals to families and customers seeking authentic, comforting experiences.</p>
+                </div>
+
+                <div class="rec-card premium">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Dark Cinematic</h3>
+                    <p><strong>Best for:</strong> Premium positioning and brand elevation. Perfect if you want to attract foodies, create an upscale perception, and compete with higher-end restaurants. Appeals to experience-seekers and food enthusiasts.</p>
+                </div>
+
+                <div class="rec-card energetic">
+                    <span class="rec-label">CHOOSE IF...</span>
+                    <h3>Street Art Wild</h3>
+                    <p><strong>Best for:</strong> Younger demographics and social media presence. Ideal if you want to create buzz, appeal to millennials/Gen Z, and build a fun, approachable brand. Great for viral marketing and online ordering focus.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="footer">
-            <p><strong>Questions or want to see modifications?</strong></p>
-            <p>These are mockups - we can blend elements, adjust colors, or create hybrid versions based on feedback.</p>
-            <p style="margin-top: 1rem; opacity: 0.7;">Created for Jacob & Alicia Schon - Taquería Doña Alicia</p>
-        </div>
+        <footer>
+            <p>Created with ❤️ for Taquería Doña Alicia • January 2025</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Each design is fully functional with working navigation, menu pages, and checkout flows</p>
+        </footer>
     </div>
 </body>
 </html>

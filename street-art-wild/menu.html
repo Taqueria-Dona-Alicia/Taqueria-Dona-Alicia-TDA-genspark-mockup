@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Taquería Doña Alicia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-pepper-hot"></i>
+                <span>Taquería Doña Alicia</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="index.html#story">Our Story</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="account-btn" onclick="openAuthModal()">
+                    <i class="fas fa-user"></i>
+                    <span>Sign In</span>
+                </button>
+                <button class="cart-btn" onclick="window.location.href='checkout.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Authentic Mexican flavors, prepared fresh daily with love</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-content">
+        <div class="container">
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="tacos">Tacos</button>
+                <button class="category-btn" data-category="entrees">Entrées</button>
+                <button class="category-btn" data-category="sides">Sides</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+            </div>
+
+            <!-- Tacos Section -->
+            <div class="menu-section" data-category="tacos">
+                <h2 class="menu-category-title">
+                    <i class="fas fa-drumstick-bite"></i>
+                    Tacos
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Tacos al Pastor</h3>
+                                <p class="item-desc">Marinated pork with pineapple, cilantro, and onions</p>
+                            </div>
+                            <span class="item-price">$3.50</span>
+                        </div>
+                        <div class="item-badge popular">Most Popular</div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Tacos al Pastor', 3.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Carne Asada Tacos</h3>
+                                <p class="item-desc">Grilled steak with cilantro, onions, and lime</p>
+                            </div>
+                            <span class="item-price">$4.00</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Carne Asada Tacos', 4.00)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Carnitas Tacos</h3>
+                                <p class="item-desc">Slow-cooked pork, crispy edges, fresh toppings</p>
+                            </div>
+                            <span class="item-price">$3.75</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Carnitas Tacos', 3.75)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Birria Tacos</h3>
+                                <p class="item-desc">Slow-cooked beef with consommé for dipping</p>
+                            </div>
+                            <span class="item-price">$4.50</span>
+                        </div>
+                        <div class="item-badge special">Chef's Special</div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Birria Tacos', 4.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Pescado Tacos</h3>
+                                <p class="item-desc">Grilled fish with cabbage slaw and chipotle mayo</p>
+                            </div>
+                            <span class="item-price">$4.25</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Pescado Tacos', 4.25)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Veggie Tacos</h3>
+                                <p class="item-desc">Grilled vegetables with black beans and avocado</p>
+                            </div>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Veggie Tacos', 3.25)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrées Section -->
+            <div class="menu-section" data-category="entrees">
+                <h2 class="menu-category-title">
+                    <i class="fas fa-utensils"></i>
+                    Entrées
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Enchiladas Verdes</h3>
+                                <p class="item-desc">Rolled tortillas with chicken, green salsa, and crema</p>
+                            </div>
+                            <span class="item-price">$12.99</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Enchiladas Verdes', 12.99)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Quesadilla Supreme</h3>
+                                <p class="item-desc">Grilled flour tortilla with cheese and choice of protein</p>
+                            </div>
+                            <span class="item-price">$9.99</span>
+                        </div>
+                        <div class="item-badge popular">Most Popular</div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Quesadilla Supreme', 9.99)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Burrito Bowl</h3>
+                                <p class="item-desc">Rice, beans, protein, veggies, salsa, and guacamole</p>
+                            </div>
+                            <span class="item-price">$11.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Burrito Bowl', 11.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Tamales Plate</h3>
+                                <p class="item-desc">3 handmade tamales with red or green salsa</p>
+                            </div>
+                            <span class="item-price">$10.99</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Tamales Plate', 10.99)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Carne Asada Plate</h3>
+                                <p class="item-desc">Grilled steak with rice, beans, and tortillas</p>
+                            </div>
+                            <span class="item-price">$14.99</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Carne Asada Plate', 14.99)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Fajitas</h3>
+                                <p class="item-desc">Sizzling peppers and onions with choice of protein</p>
+                            </div>
+                            <span class="item-price">$13.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Fajitas', 13.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides Section -->
+            <div class="menu-section" data-category="sides">
+                <h2 class="menu-category-title">
+                    <i class="fas fa-pepper-hot"></i>
+                    Sides & Extras
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Rice & Beans</h3>
+                                <p class="item-desc">Mexican rice and refried beans</p>
+                            </div>
+                            <span class="item-price">$3.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Rice & Beans', 3.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Guacamole & Chips</h3>
+                                <p class="item-desc">Fresh homemade guacamole with tortilla chips</p>
+                            </div>
+                            <span class="item-price">$5.99</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Guacamole & Chips', 5.99)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Elote (Mexican Corn)</h3>
+                                <p class="item-desc">Grilled corn with mayo, cheese, and chili</p>
+                            </div>
+                            <span class="item-price">$4.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Elote', 4.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Chips & Salsa</h3>
+                                <p class="item-desc">Fresh tortilla chips with house salsa</p>
+                            </div>
+                            <span class="item-price">$3.00</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Chips & Salsa', 3.00)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks Section -->
+            <div class="menu-section" data-category="drinks">
+                <h2 class="menu-category-title">
+                    <i class="fas fa-glass-martini-alt"></i>
+                    Drinks
+                </h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Horchata</h3>
+                                <p class="item-desc">Traditional rice drink with cinnamon</p>
+                            </div>
+                            <span class="item-price">$3.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Horchata', 3.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Jamaica (Hibiscus Tea)</h3>
+                                <p class="item-desc">Refreshing hibiscus flower tea</p>
+                            </div>
+                            <span class="item-price">$3.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Jamaica', 3.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Mexican Coke</h3>
+                                <p class="item-desc">Authentic Coca-Cola from Mexico</p>
+                            </div>
+                            <span class="item-price">$2.50</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Mexican Coke', 2.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>Agua Fresca</h3>
+                                <p class="item-desc">Fresh fruit water (flavor of the day)</p>
+                            </div>
+                            <span class="item-price">$3.00</span>
+                        </div>
+                        <button class="btn-add-menu" onclick="addMenuItemToCart('Agua Fresca', 3.00)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout CTA -->
+            <div class="checkout-cta">
+                <div class="cta-content">
+                    <h3>Ready to Order?</h3>
+                    <p>Your delicious meal is just a click away</p>
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='checkout.html'">
+                        <i class="fas fa-shopping-bag"></i>
+                        View Cart & Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-pepper-hot"></i> Taquería Doña Alicia</h3>
+                    <p>Authentic Mexican cuisine made with love since 1987</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#story">Our Story</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Taquería Doña Alicia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>Sign In</h2>
+            <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" onclick="alert('Sign up functionality would go here')">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="menu-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquería Doña Alicia - Authentic Mexican Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-pepper-hot"></i>
+                <span>Taquería Doña Alicia</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="account-btn" onclick="openAuthModal()">
+                    <i class="fas fa-user"></i>
+                    <span>Sign In</span>
+                </button>
+                <button class="cart-btn" onclick="window.location.href='checkout.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span>Family Recipe Since 1987</span>
+            </div>
+            <h1>Welcome to Doña Alicia's Kitchen</h1>
+            <p class="hero-subtitle">Where Every Taco Tells a Story of Tradition, Love, and Authentic Mexican Flavor</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>37 Years</strong>
+                    <span>Family Tradition</span>
+                </div>
+                <div class="stat">
+                    <strong>50K+</strong>
+                    <span>Happy Customers</span>
+                </div>
+                <div class="stat">
+                    <strong>4.9★</strong>
+                    <span>Average Rating</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="window.location.href='menu.html'">
+                    Order Now
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
+                    Our Story
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Special Banner -->
+    <section class="special-banner">
+        <div class="container">
+            <div class="special-content">
+                <i class="fas fa-fire"></i>
+                <div class="special-text">
+                    <strong>Today's Special:</strong>
+                    <span>Birria Tacos with Consommé - Slow-cooked beef in grandmother's secret spice blend</span>
+                </div>
+                <button class="btn-special" onclick="window.location.href='menu.html'">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Health Grade A</h3>
+                    <p>Certified Excellence</p>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Daily</h3>
+                    <p>100% Fresh Ingredients</p>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Family Recipes</h3>
+                    <p>Passed Down 3 Generations</p>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Loved</h3>
+                    <p>Serving Since 1987</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section class="featured-items">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Signature Dishes</h2>
+                <p>Handcrafted with love, served with pride</p>
+            </div>
+            <div class="items-grid">
+                <div class="item-card signature">
+                    <div class="item-badge">Customer Favorite</div>
+                    <div class="item-image">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="item-info">
+                        <h3>Tacos al Pastor</h3>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(1,247 reviews)</span>
+                        </div>
+                        <p class="item-description">Marinated pork with pineapple, cilantro, and onions on fresh corn tortillas</p>
+                        <p class="customer-quote">"Best tacos I've ever had! The pineapple adds the perfect sweetness." - Maria R.</p>
+                        <div class="item-footer">
+                            <span class="price">$3.50</span>
+                            <button class="btn btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card signature">
+                    <div class="item-badge">Chef's Special</div>
+                    <div class="item-image">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="item-info">
+                        <h3>Enchiladas Verdes</h3>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(892 reviews)</span>
+                        </div>
+                        <p class="item-description">Rolled tortillas with chicken, topped with our homemade green salsa and crema</p>
+                        <p class="customer-quote">"Just like my abuela used to make. Authentic and delicious!" - Carlos M.</p>
+                        <div class="item-footer">
+                            <span class="price">$12.99</span>
+                            <button class="btn btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-card signature">
+                    <div class="item-badge">Most Ordered</div>
+                    <div class="item-image">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <div class="item-info">
+                        <h3>Quesadilla Supreme</h3>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(1,543 reviews)</span>
+                        </div>
+                        <p class="item-description">Grilled flour tortilla filled with Oaxaca cheese, choice of protein, and fresh vegetables</p>
+                        <p class="customer-quote">"Crispy, cheesy perfection. My kids beg for this every week!" - Jennifer L.</p>
+                        <div class="item-footer">
+                            <span class="price">$9.99</span>
+                            <button class="btn btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <button class="btn btn-outline" onclick="window.location.href='menu.html'">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Family's Story</h2>
+                    <p class="story-intro">For over three decades, Taquería Doña Alicia has been serving authentic Mexican cuisine with the same love and care that Doña Alicia brought from her hometown in Jalisco.</p>
+                    <p>What started as a small family kitchen has grown into a beloved community gathering place. Every recipe comes from Doña Alicia herself—passed down through generations and perfected over 37 years of serving our neighbors.</p>
+                    <p>We prepare everything fresh daily using traditional methods and the finest ingredients. When you taste our food, you're not just getting a meal—you're experiencing a piece of our family's heritage.</p>
+                    <blockquote>
+                        <p>"Cooking is love made visible. Every dish we serve carries the warmth of our family to yours."</p>
+                        <cite>- Doña Alicia</cite>
+                    </blockquote>
+                </div>
+                <div class="story-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-heart"></i>
+                        <p>Family Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Real reviews from real people in our community</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card featured-review">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">JR</div>
+                            <div>
+                                <h4>Jessica Rodriguez</h4>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="review-badge">Verified Customer</span>
+                    </div>
+                    <p class="review-text">"I've been coming here for 10 years and the quality never disappoints. The carne asada tacos are absolutely incredible—tender, flavorful, and always consistent. This place feels like coming home."</p>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">MT</div>
+                            <div>
+                                <h4>Michael Thompson</h4>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Best Mexican food in the area, hands down. Fresh ingredients, generous portions, and incredibly authentic flavors. The family that runs it is so warm and welcoming."</p>
+                    <span class="review-date">1 month ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">SL</div>
+                            <div>
+                                <h4>Sarah Lopez</h4>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"The birria tacos changed my life! Rich, savory, and that consommé is liquid gold. I order from here at least twice a week now."</p>
+                    <span class="review-date">3 weeks ago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <p>Order online for pickup or delivery. We're here to serve you!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>hola@taqueria-alicia.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Hours</strong>
+                                <p>Mon-Sat: 10am - 9pm<br>Sunday: 11am - 8pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <h3>Ready to Order?</h3>
+                    <p>Experience authentic Mexican cuisine delivered to your door</p>
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='menu.html'">
+                        <i class="fas fa-shopping-bag"></i>
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-pepper-hot"></i> Taquería Doña Alicia</h3>
+                    <p>Authentic Mexican cuisine made with love since 1987</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Taquería Doña Alicia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>Sign In</h2>
+            <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" onclick="alert('Sign up functionality would go here')">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

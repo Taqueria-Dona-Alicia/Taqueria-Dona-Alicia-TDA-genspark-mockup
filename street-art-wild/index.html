@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquería Doña Alicia - Street Food Vibes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-emoji">🔥</span>
+                <span class="logo-text">DOÑA ALICIA'S</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="#story">STORY</a></li>
+                <li><a href="#contact">HIT US UP</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="account-btn" onclick="openAuthModal()">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="cart-btn" onclick="window.location.href='checkout.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">⚡ REAL DEAL MEXICAN ⚡</div>
+            <h1 class="hero-title">
+                <span class="title-top">TACOS SO GOOD</span>
+                <span class="title-main">YOU'LL CRY</span>
+                <span class="title-bottom">(happy tears only)</span>
+            </h1>
+            <div class="hero-features">
+                <span>🌮 LEGIT AF</span>
+                <span>🔥 37 YEARS STRONG</span>
+                <span>⭐ 4.9 STARS</span>
+            </div>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="window.location.href='menu.html'">
+                    ORDER NOW
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
+                    OUR VIBE
+                </button>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="graphic-taco">🌮</div>
+            <div class="graphic-flame">🔥</div>
+            <div class="graphic-pepper">🌶️</div>
+        </div>
+    </section>
+
+    <!-- Special Alert -->
+    <section class="alert-banner">
+        <div class="alert-content">
+            <span class="alert-emoji">🚨</span>
+            <strong>TODAY'S INSANITY:</strong>
+            <span>Birria Tacos + Consommé = Your new obsession</span>
+            <button class="btn btn-alert" onclick="window.location.href='menu.html'">GET IT</button>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="badges-section">
+        <div class="container">
+            <div class="badges-grid">
+                <div class="badge-item">
+                    <div class="badge-icon">✅</div>
+                    <h3>GRADE A</h3>
+                    <p>Health certified</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">🥬</div>
+                    <h3>FRESH DAILY</h3>
+                    <p>Zero shortcuts</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">👵</div>
+                    <h3>GRANDMA'S RECIPES</h3>
+                    <p>3 generations deep</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">❤️</div>
+                    <h3>COMMUNITY FAVE</h3>
+                    <p>Since '87</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section class="menu-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>STUFF THAT'LL<br/>BLOW YOUR MIND 🤯</h2>
+                <p>No cap - these are fire</p>
+            </div>
+
+            <div class="items-grid">
+                <div class="item-card hot">
+                    <div class="item-badge">🔥 HOT SELLER</div>
+                    <div class="item-emoji">🌮</div>
+                    <h3>AL PASTOR TACOS</h3>
+                    <p>Pork + Pineapple = Chef's kiss 👌</p>
+                    <div class="item-stats">
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(1.2K+ raves)</span>
+                    </div>
+                    <div class="customer-shout">
+                        "BEST TACOS EVER OMG" - Maria
+                    </div>
+                    <div class="item-footer">
+                        <span class="price">$3.50</span>
+                        <button class="btn btn-add">ADD</button>
+                    </div>
+                </div>
+
+                <div class="item-card special">
+                    <div class="item-badge special">✨ CHEF'S PICK</div>
+                    <div class="item-emoji">🫔</div>
+                    <h3>ENCHILADAS VERDES</h3>
+                    <p>Like abuela made 'em 💚</p>
+                    <div class="item-stats">
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(892 loves)</span>
+                    </div>
+                    <div class="customer-shout">
+                        "STRAIGHT UP AUTHENTIC" - Carlos
+                    </div>
+                    <div class="item-footer">
+                        <span class="price">$12.99</span>
+                        <button class="btn btn-add">ADD</button>
+                    </div>
+                </div>
+
+                <div class="item-card popular">
+                    <div class="item-badge popular">💯 MOST ORDERED</div>
+                    <div class="item-emoji">🧀</div>
+                    <h3>QUESADILLA SUPREME</h3>
+                    <p>Cheesy perfection 😍</p>
+                    <div class="item-stats">
+                        <span class="rating">⭐⭐⭐⭐✨</span>
+                        <span class="reviews">(1.5K+ fans)</span>
+                    </div>
+                    <div class="customer-shout">
+                        "MY KIDS DEMAND THIS WEEKLY" - Jen
+                    </div>
+                    <div class="item-footer">
+                        <span class="price">$9.99</span>
+                        <button class="btn btn-add">ADD</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more">
+                <button class="btn btn-big" onclick="window.location.href='menu.html'">
+                    SEE ALL THE GOODNESS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-image">
+                    <div class="image-content">
+                        <div class="image-emoji">❤️</div>
+                        <p>FAMILY VIBES</p>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <h2>REAL TALK:<br/>THIS IS FAMILY</h2>
+                    <div class="story-underline"></div>
+                    <p class="story-big">Doña Alicia didn't play. She brought LEGIT recipes from Jalisco and we've been keeping it 💯 for 37 years.</p>
+                    <p>Started in a tiny kitchen. Now? We're the spot everyone talks about. Every single dish = grandma-approved, no shortcuts, all heart.</p>
+                    <p>We prep fresh EVERY. SINGLE. DAY. That's the only way we know how. When you bite into our food, you're tasting decades of perfection and a whole lotta love.</p>
+                    <div class="story-quote">
+                        <div class="quote-icon">💬</div>
+                        <p>"Food made with love hits different. That's our whole vibe."</p>
+                        <span>- Doña Alicia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>PEOPLE ARE<br/>FREAKING OUT 😱</h2>
+                <p>Real reviews from real folks</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card featured">
+                    <div class="review-label">⭐ FEATURED</div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Been coming for 10 YEARS. Never disappoints. The carne asada tacos are UNREAL. This place feels like home."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">JR</div>
+                        <div class="reviewer-info">
+                            <strong>Jessica R.</strong>
+                            <span>Verified Regular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Best Mexican food around. PERIOD. Fresh, authentic, generous portions. The family is so welcoming!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">MT</div>
+                        <div class="reviewer-info">
+                            <strong>Michael T.</strong>
+                            <span>First-time = Mind blown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"The birria tacos CHANGED MY LIFE. That consommé? *chef's kiss* I order from here 2x a week now."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">SL</div>
+                        <div class="reviewer-info">
+                            <strong>Sarah L.</strong>
+                            <span>Birria Addict</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-header">
+                    <h2>HIT US UP 📞</h2>
+                    <p>Order online • Pickup or delivery • Ez pz</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <strong>CALL/TEXT</strong>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <strong>EMAIL</strong>
+                        <p>hola@taqueria-alicia.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <strong>HOURS</strong>
+                        <p>Mon-Sat: 10am-9pm<br/>Sun: 11am-8pm</p>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <h3>READY TO EAT? 🤤</h3>
+                    <button class="btn btn-huge" onclick="window.location.href='menu.html'">
+                        ORDER NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-emoji">🔥</span>
+                        <span>DOÑA ALICIA'S</span>
+                    </div>
+                    <p>Keepin' it real since 1987</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>LINKS</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="#story">Story</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 TAQUERÍA DOÑA ALICIA • ALL RIGHTS RESERVED • MADE WITH ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>SIGN IN</h2>
+            <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">LET'S GO</button>
+            </form>
+            <p class="auth-switch">New here? <a href="#">SIGN UP</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
